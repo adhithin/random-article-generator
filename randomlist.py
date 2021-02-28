@@ -1,7 +1,21 @@
 import random
+import requests
+import json
+from flask import jsonify
 
-list1 = ["red","green", "blue" ]
+#here, we're requesting a response from an api
+response = requests.get("http://api.open-notify.org/astros.json")
 
-color = random.choice(list1)
+#when we print the response, we get "200". this is a confirmation that we were able to get the data.
+print(response)
 
-print(color)
+#this prints our information. notice that it prints like a dictionary!
+print(response.json())
+
+
+
+
+
+
+
+
